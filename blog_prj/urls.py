@@ -15,13 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from blog.views import post_list
 from django.views.static import serve
 from .settings import MEDIA_ROOT
+from accounts import urls as accounts_urls
 
 from blog import urls as blog_urls
 
 urlpatterns = [
     url(r'^admin/',include(admin.site.urls)),
+    url(r'^$', post_list, name='index'),
     url(r'^blog/', include(blog_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'documents_root': MEDIA_ROOT}),
+    url(r'^user/',include(accounts_urls)),
+
+
 ]
