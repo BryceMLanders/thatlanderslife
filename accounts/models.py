@@ -11,8 +11,6 @@ import arrow
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     stripe_id = models.CharField(max_length=40, default='')
-    nickname = models.CharField(max_length=40, default='')
-    follows = models.ManyToManyField(User, related_name="followers")
     # subscription_end = models.DateTimeField(default=arrow.now)
 
     @property
