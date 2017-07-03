@@ -18,16 +18,31 @@ from django.contrib import admin
 from blog.views import post_list
 from django.views.static import serve
 from accounts import urls as accounts_urls
+# from home import urls as home_urls
+from home.views import home
 
 from blog import urls as blog_urls
+from photos import urls as photos_urls
+from contact import urls as contact_urls
+from donate import urls as donate_urls
+from bio import urls as bio_urls
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/',include(admin.site.urls)),
-    url(r'^$', post_list, name='index'),
+    url(r'^$',home , name='index'),
     url(r'^blog/', include(blog_urls)),
     url(r'^user/',include(accounts_urls)),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^user/', include(accounts_urls)),
-
-
+    url(r'^photos/', include(photos_urls)),
+    url(r'^contact/', include(contact_urls)),
+     url(r'^donate/', include(donate_urls)),
+      url(r'^bio/', include(bio_urls)),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

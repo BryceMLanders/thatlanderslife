@@ -25,9 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG' , False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['desolate-dusk-63820.herokuapp.com', 'localhost']
+INTERNAL_IPS = ['127.0.0.1']
 
 
 # Application definition
@@ -46,10 +47,17 @@ INSTALLED_APPS = [
     'django_gravatar',
     'accounts',
     'storages',
-    'rest_framework'
+    'rest_framework',
+    'home',
+    'photos',
+    'contact',
+    'donate',
+    'bio',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -91,7 +99,9 @@ WSGI_APPLICATION = 'blog_prj.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+# DATABASE_URL= postgres://cjsnyzsywlkqga:bfdc66e1c94019b16827f26625e93e9893c68b98c388d858e2e19d2598ca0836@ec2-107-22-162-158.compute-1.amazonaws.com:5432/d71ids9ufatmpm
+DATABASE_URL = os.environ.get('DATABASE_URL')
+DATABASES = {'default': dj_database_url.parse(DATABASE_URL) }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
