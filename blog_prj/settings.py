@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG' , False)
+DEBUG = os.environ.get('DEBUG' , True)
 
-ALLOWED_HOSTS = ['desolate-dusk-63820.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['desolate-dusk-63820.herokuapp.com', 'localhost', 'www.thatlanderslife.com']
 INTERNAL_IPS = ['127.0.0.1']
 
 
