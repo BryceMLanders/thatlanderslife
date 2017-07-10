@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'donate',
     'bio',
     'debug_toolbar',
+    'contact_form',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -175,3 +177,10 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.thatlanderslife.com'
+EMAIL_PORT = 26
+EMAIL_HOST_USER = 'bryce@thatlanderslife.com'
+EMAIL_HOST_PASSWORD = '}Erpvk^(y7Be@'

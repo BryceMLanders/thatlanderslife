@@ -6,37 +6,58 @@
     <title>That Landers Life</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 <link rel="stylesheet/css" type="text/css" href="{% static 'css/blog.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
     <!--<script src="{% static 'js/example.js'%}"></script>-->
-    {% block head_js %}{% endblock %}
+    {% block head_js %}
 
-<header role="banner">
-<nav id="navbar-primary" class="navbar" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
+<body>
+    <div class="mobile-display" >
+        <h2 class="site-title">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/legs.jpg' %}" width="100" alt="logo" alt="smashtheshell" >
+            </a>
+        </h2>
     </div>
-    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="{% url 'blog' %}">Blog</a></li>
-        <li><a href="{% url 'photos' %}">Gallery</a></li>
-        <li><a href="{% url 'index' %}"><img class="brandimg" id="logo-navbar-middle" src="{% static 'images/Legs.jpg' %}" width="100" alt="logo"></a></li>
-        <li><a href="{% url 'contact' %}">Contact Us</a></li>
-        <li><a href="{% url 'donate' %}">Fund Us</a></li>
-        <li><a href="{% url 'bio' %}">The Landers</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</header><!-- header role="banner" -->
+    <header>
+        <nav>
+            <a href="#" class="toggle-menu">&#9776;</a>
+            <ul class="nav-list nav-open" id="nav">
+                <li><a href="{% url 'index' %}"><strong>Home</strong></a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li class="has-logo"><a href="{% url 'index' %}">
+                    <h2 class="site-title">
+                        <img src="{% static 'images/legs.jpg' %}" alt="smashtheshell">
+                    </h2>
+                </a></li>
+                <li><a href="{% url 'bio' %}">The Landers</a></li>
+                <li><a href="{% url 'photos' %}">Photos</a></li>
+                <li><a href="{% url 'donate' %}">Fund Us</a></li>
+            </ul>
+        </nav>
+    </header>   
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        var ulNav= "#nav", openNav = "active";  
+
+        $('.toggle-menu').click(function(e){
+
+                if($(ulNav).hasClass(openNav)){
+                    $(ulNav).removeClass(openNav);
+                }else{
+                    $(ulNav).addClass(openNav);
+                }
+                e.preventDefault();
+        })          
+    })
+    </script>
+    
+</body>
+
       
       
       
@@ -85,4 +106,4 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
-</html>
+{% endblock %}

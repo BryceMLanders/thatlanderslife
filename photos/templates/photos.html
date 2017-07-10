@@ -1,24 +1,25 @@
 {% extends "base.html" %}
+{% load static%}
  
 {% block content %}
        <div class="container">
         <div class="row">
         <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="gallery-title">Our Life in photos</h1>
+            <h1 class="gallery-title">Our Life in Photos</h1>
         </div>
 
         <div align="center">
-            <button class="btn btn-default filter-button" data-filter="all">All</button>
-            <button class="btn btn-default filter-button" data-filter="hdpe">Ireland</button>
-            <button class="btn btn-default filter-button" data-filter="sprinkle">The Girls</button>
-            <button class="btn btn-default filter-button" data-filter="spray">The Van</button>
-            <button class="btn btn-default filter-button" data-filter="irrigation">Silly photos with Friends</button>
+            <button class="btn btn-default filter-button" data-filter="all"><a href="{% url 'photos' %}">All</a></button>
+            <button class="btn btn-default filter-button" data-filter="hdpe"><a href="{% url 'ireland' %}">Ireland</a></button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle"><a href="{% url 'girls' %}">The Girls</a></button>
+            <button class="btn btn-default filter-button" data-filter="spray"><a href="{% url 'van' %}">The Van</a></button>
+            <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'friends' %}">Friends & Family</a></button>
         </div>
         <br/>
 
 
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+{% comment %}<section>{% endcomment %}
+            {% comment %}<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
                 <img src="http://fakeimg.pl/365x365/" class="img-responsive">
             </div>
 
@@ -66,8 +67,33 @@
                 <img src="http://fakeimg.pl/365x365/" class="img-responsive">
             </div>
         </div>
-    </div>
+    </div>{% endcomment %}
 </section>
+
+{% for photos in photos %}
+            
+       <div class="product-container">
+            <div class="left-block">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter {{photo.tag}}">
+                <div class="thumbnail">
+                <img src= "{{ MEDIA_URL }}{{ photo.image }}" class="img-responsive" height="100%" width="100%">
+            <div class="right-block">
+                {% comment %}<figcaption><h4>"{{ product.name}}"</h4></figcaption>
+                <p>"{{ product.description }}</p>{% endcomment %}
+
+               {% comment %}<a href="{% url 'product_options' product.id %}">Buy</a>
+
+               <form method="POST" action="/cart/add/{{product.id}}">
+                {% csrf_token %}
+                 <button class="btn btn-default filter-button">Buy</button></p>
+                 </form>{% endcomment %}
+                 </div>
+                 </div>
+                 </div>
+                 </div>
+        </div>
+
+{% endfor %}
 <script>
     $(document).ready(function(){
 

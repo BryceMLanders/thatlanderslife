@@ -1,5 +1,23 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
  
 {% block content %}
-       <h1>Hello Bryce!</h1>
+<div>
+    <p>
+        <img src="{% static 'images/me.jpg' %}" alt="">
+        Bryce is a Web Developer. {% lorem 2 %}
+    </p>
+<br>  
+<br>
+
+</div>
+
+<div>
+    <p>
+    Ashton is a CPA. {% lorem 3 %}
+    <img src="{% static 'images/Ash.jpg' %}" alt="">
+    </p>   
+</div>
+
+
 {% endblock %}
