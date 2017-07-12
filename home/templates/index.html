@@ -1,187 +1,100 @@
 {% extends "base.html" %}
+{% load staticfiles %}
  
 {% block content %}
-
-<div id="myCarousel" class="carousel slide" class="container">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="" contenteditable="false"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="active" contenteditable="false"></li>
-        <li data-target="#myCarousel" data-slide-to="2" class="" contenteditable="false"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="item" style="">
-            <img src="//placehold.it/1024x600/556B2F&text=First+Slide" alt="" class="">
-            <div class="carousel-caption">
-                <h4 class="">First Slide Title</h4>
-                <p class="">
-                   Description for First Slide, this First Slide.
-                </p>
+ <header class="intro-header" style="background-image: url('{% static 'images/countryside.jpg'%}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>That Landers Life</h1>
+                        {% comment %}<hr class="small">
+                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>{% endcomment %}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="item active">
-            <img src="//placehold.it/1024x600/B05404&text=Second+Slide" alt="" class="">
-            <div class="carousel-caption">
-                <h4 class="">Second Slide Title</h4>
+ </header>
 
-                <p class="">
-                   Description for Second Slide, this is Second Slide.
-                </p>
-            </div>
-        </div>
-        <div class="item" style="">
-            <img src="//placehold.it/1024x600/3333bb&text=Third+Slide" alt="" class="">
-            <div class="carousel-caption">
-                <h4 class="">Third Slide Title</h4>
-
-                            <p class="">
-                   Description for Third Slide, this is Third Slide.
-                </p>
-            </div>
-        </div>
-    </div>    
-
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-<script>
-    $('#myCarousel').carousel();
-    var winWidth = $(window).innerWidth();
-    $(window).resize(function () {
-
-        if ($(window).innerWidth() < winWidth) {
-            $('.carousel-inner>.item>img').css({
-                'min-width': winWidth, 'width': winWidth
-            });
-        }
-        else {
-            winWidth = $(window).innerWidth();
-            $('.carousel-inner>.item>img').css({
-                'min-width': '', 'width': ''
-            });
-        }
-    });
-</script>
-</div>
-<hr>
-<div class="container">
-	<div class="row"><!--
-
-Photos from unsplash.com
-
-Follow me on
-Dribbble: https://dribbble.com/supahfunk
-Twitter: https://twitter.com/supahfunk
-Codepen: https://codepen.io/supah/
-
--->
-<div class="gallery">
-  <figure>
-    <img src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Daytona Beach <small>United States</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Териберка, gorod Severomorsk <small>Russia</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1445964047600-cdbdb873673d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>
-      Bad Pyrmont <small>Deutschland</small>
-    </figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1439798060585-62ab242d7724?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Yellowstone National Park <small>United States</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Quiraing, Portree <small>United Kingdom</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1441906363162-903afd0d3d52?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Highlands <small>United States</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Daytona Beach <small>United States</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Териберка, gorod Severomorsk <small>Russia</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1445964047600-cdbdb873673d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>
-      Bad Pyrmont <small>Deutschland</small>
-    </figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1439798060585-62ab242d7724?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Yellowstone National Park <small>United States</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Quiraing, Portree <small>United Kingdom</small></figcaption>
-  </figure>
-  <figure>
-    <img src="https://images.unsplash.com/photo-1441906363162-903afd0d3d52?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-    <figcaption>Highlands <small>United States</small></figcaption>
-  </figure>
-</div>
-
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
-  <symbol id="close" viewBox="0 0 18 18">
-    <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M9,0.493C4.302,0.493,0.493,4.302,0.493,9S4.302,17.507,9,17.507
-			S17.507,13.698,17.507,9S13.698,0.493,9,0.493z M12.491,11.491c0.292,0.296,0.292,0.773,0,1.068c-0.293,0.295-0.767,0.295-1.059,0
-			l-2.435-2.457L6.564,12.56c-0.292,0.295-0.766,0.295-1.058,0c-0.292-0.295-0.292-0.772,0-1.068L7.94,9.035L5.435,6.507
-			c-0.292-0.295-0.292-0.773,0-1.068c0.293-0.295,0.766-0.295,1.059,0l2.504,2.528l2.505-2.528c0.292-0.295,0.767-0.295,1.059,0
-			s0.292,0.773,0,1.068l-2.505,2.528L12.491,11.491z"/>
-  </symbol>
-</svg>
-<script>
-    popup = {
-  init: function(){
-    $('figure').click(function(){
-      popup.open($(this));
-    });
-    
-    $(document).on('click', '.popup img', function(){
-      return false;
-    }).on('click', '.popup', function(){
-      popup.close();
-    })
-  },
-  open: function($figure) {
-    $('.gallery').addClass('pop');
-    $popup = $('<div class="popup" />').appendTo($('body'));
-    $fig = $figure.clone().appendTo($('.popup'));
-    $bg = $('<div class="bg" />').appendTo($('.popup'));
-    $close = $('<div class="close"><svg><use xlink:href="#close"></use></svg></div>').appendTo($fig);
-    $shadow = $('<div class="shadow" />').appendTo($fig);
-    src = $('img', $fig).attr('src');
-    $shadow.css({backgroundImage: 'url(' + src + ')'});
-    $bg.css({backgroundImage: 'url(' + src + ')'});
-    setTimeout(function(){
-      $('.popup').addClass('pop');
-    }, 10);
-  },
-  close: function(){
-    $('.gallery, .popup').removeClass('pop');
-    setTimeout(function(){
-      $('.popup').remove()
-    }, 100);
-  }
+ <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+<div id="mapdiv" style="width: 1000px; height: 450px;"></div>
+<div style="width: 1000px; font-size: 70%; padding: 5px 0; text-align: center; background-color: #535364; margin-top: 1px; color: #B4B4B7;"><a href="https://www.amcharts.com/visited_countries/" style="color: #B4B4B7;">Create your own visited countries map</a> or check out the <a href="https://www.amcharts.com/" style="color: #B4B4B7;">JavaScript Charts</a>.</div>
+<script type="text/javascript">
+var map = AmCharts.makeChart("mapdiv",{
+type: "map",
+theme: "dark",
+projection: "winkel3",
+panEventsEnabled : true,
+backgroundColor : "#535364",
+backgroundAlpha : 1,
+zoomControl: {
+zoomControlEnabled : true
+},
+dataProvider : {
+map : "worldHigh",
+getAreasFromMap : true,
+areas :
+[
+	{
+		"id": "AT",
+		"showAsSelected": true
+	},
+	{
+		"id": "CZ",
+		"showAsSelected": true
+	},
+	{
+		"id": "FR",
+		"showAsSelected": true
+	},
+	{
+		"id": "DE",
+		"showAsSelected": true
+	},
+	{
+		"id": "GR",
+		"showAsSelected": true
+	},
+	{
+		"id": "IE",
+		"showAsSelected": true
+	},
+	{
+		"id": "IT",
+		"showAsSelected": true
+	},
+	{
+		"id": "NL",
+		"showAsSelected": true
+	},
+	{
+		"id": "GB",
+		"showAsSelected": true
+	},
+	{
+		"id": "MX",
+		"showAsSelected": true
+	},
+	{
+		"id": "US",
+		"showAsSelected": true
+	}
+]
+},
+areasSettings : {
+autoZoom : true,
+color : "#B4B4B7",
+colorSolid : "#84ADE9",
+selectedColor : "#84ADE9",
+outlineColor : "#666666",
+rollOverColor : "#9EC2F7",
+rollOverOutlineColor : "#000000"
 }
-
-popup.init()
-
+});
 </script>
-		<h2></h2>
-	</div>
-</div>
+
+
 
 {% endblock %}

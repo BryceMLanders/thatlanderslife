@@ -1,8 +1,6 @@
 from django.conf.urls import url
-from donate.views import *
-from .views import donate
- 
+from .views import all_donations
+
 urlpatterns = [
-    url(r'^$', donate, name='donate'),
-    
+    url(r'^$', all_donations, name='donate'),
 ]

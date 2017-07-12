@@ -1,5 +1,45 @@
 {% extends "base.html" %}
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
+{% block head_js %}
+  <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+  <script type="text/javascript">
+      //<![CDATA[
+      Stripe.publishableKey = '{{ publishable }}';
+      //]]>
+  </script>
+  <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
  
 {% block content %}
-       <h1>Hello Bryce!</h1>
+<div class="col-lg-12">  
+  <div class="fundus"
+    <form role="form" method="post" id="payment-form" action="{% url 'donate' %}">
+    <div id="credit-card-errors" style="display:none">
+      <div class="alert-message block-message error" id="stripe-error-message"></div>
+    </div>
+
+    {% comment %} <legend>Buy It Now!</legend> {% endcomment %}
+
+{% for donate in donations  %}
+
+{% endfor %}
+
+    <div>
+        <p><img height="100" width="100" src="{% static 'images/fund-us.jpg'%}"></p>
+        <p>{{ donate.name }}</p>
+        <p>{{ donate.description }}</p>
+        <p>{{ donate.price }}</p>
+    </div>
+
+    <hr>
+
+    {% csrf_token %}
+    {{ form|as_bootstrap }}
+    <div class="form-group">
+      <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+    </div>
+    </form>
+</div>
+</div>
 {% endblock %}
