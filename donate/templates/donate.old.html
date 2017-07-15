@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
+{% block head_js %}
+  <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+  <script type="text/javascript">
+      //<![CDATA[
+      Stripe.publishableKey = '{{ publishable }}';
+      //]]>
+  </script>
+  <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+ 
+{% block content %}
+<div class="col-lg-12">  
+  <div class="fundus"
+    <form role="form" method="post" id="payment-form" action="{% url 'donate' %}">
+    <div id="credit-card-errors" style="display:none">
+      <div class="alert-message block-message error" id="stripe-error-message"></div>
+    </div>
+
+    {% comment %} <legend>Buy It Now!</legend> {% endcomment %}
+
+
+{% for donate in donations  %}
+
+{% endfor %}
+ <div>
+         <p><img height="100" width="100" src="{% static 'images/fund-us.jpg'%}"></p> 
+        <p>{{ donate.name }}</p>
+        <p>{{ donate.description }}</p>
+        <p>{{ donate.price }}</p>
+    </div>
+
+    <hr>
+<form method="POST">
+    {% csrf_token %}
+    {{ form|as_bootstrap }}
+    <div class="form-group">
+      <button name="id-button" class="checkout-button btn btn-success" type="submit" formaction="{% url 'make_donation' 500 %}">Donate $5.00</button>
+      <button name="id-button" class="checkout-button btn btn-success" type="submit" formaction="{% url 'make_donation' 5000 %}">Donate $50.00</button>
+      <button name="id-button" class="checkout-button btn btn-success" type="submit" formaction="{% url 'make_donation' 1000 %}">Donate $100.00</button>
+      
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+
+
+{% endblock %}

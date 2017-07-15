@@ -4,31 +4,31 @@ from payments.forms import MakePaymentForm
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.template.context_processors import csrf
 from django.conf import settings
-from products.models import Product
+from donate.models import Donation
 import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required(login_url="/accounts/login")
-def buy_now(request, id):
+def donate_now(request, id):
     if request.method == 'POST':
         form = MakePaymentForm(request.POST)
         if form.is_valid():
             try:
-                product = get_object_or_404(Product, pk=id)
-                customer = stripe.Charge.create(
-                    amount= int(product.price * 100),
+                donation = get_object_or_404(Donation, pk=id)
+                charge = stripe.Charge.create(
+                    amount= int(donation.price * 100),
                     currency="EUR",
-                    description=product.name,
+                    description=donation.name,
                     card=form.cleaned_data['stripe_id'],
                 )
             except (stripe.error.CardError, e):
                 messages.error(request, "Your card was declined!")
 
-            if customer.paid:
+            if charge.paid:
                 messages.success(request, "You have successfully paid")
-                return redirect(reverse('products'))
+                return redirect(reverse('wanted_donation'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -36,9 +36,9 @@ def buy_now(request, id):
 
     else:
         form = MakePaymentForm()
-        product = get_object_or_404(Product, pk=id)
+        donation = get_object_or_404(Donation, pk=id)
 
-    args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE, 'product': product}
+    args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE, 'donation': donation}
     args.update(csrf(request))
 
     return render(request, 'pay.html', args)

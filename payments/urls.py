@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from .views import buy_now
+from .views import donate_now
 
 urlpatterns = [
-    url(r'^buy_now/(?P<id>\d+)', buy_now, name='buy_now_stripe'),
+    url(r'^donate_now/(?P<id>\d+)', donate_now, name='donate_now_stripe'),
 ]

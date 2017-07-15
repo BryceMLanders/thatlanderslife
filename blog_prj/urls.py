@@ -25,6 +25,7 @@ from blog import urls as blog_urls
 from photos import urls as photos_urls
 from contact import urls as contact_urls
 from donate import urls as donate_urls
+from payments import urls as payment_urls
 from bio import urls as bio_urls
 from django.conf import settings
 
@@ -37,8 +38,9 @@ urlpatterns = [
     url(r'^user/', include(accounts_urls)),
     url(r'^photos/', include(photos_urls)),
     url(r'^contact/', include(contact_urls)),
-     url(r'^donate/', include(donate_urls)),
-      url(r'^bio/', include(bio_urls)),
+    url(r'^donate/', include(donate_urls)),
+    url(r'^payments/', include(payment_urls)),
+    url(r'^bio/', include(bio_urls)),
 ]
 
 if settings.DEBUG:

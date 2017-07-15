@@ -51,6 +51,14 @@ header{
   border-radius: 50%;
 }
 
+.site-title :hover {
+  
+}
+
+.site-heading {
+  color: rgba(38,12,12,.65) !important;  
+}
+
 .nav-list{
   display: flex;
   flex-flow: row;
@@ -58,6 +66,7 @@ header{
   align-items: center;
   white-space: nowrap;
   margin: 0px 170px;
+  font-size: 15px;
 }
 .nav-list > li {
   position: relative;
@@ -155,6 +164,16 @@ header{
 /*End Nav section*/
 
 
+/*Map-section  */
+
+.map-section {
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100% !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+}
+
 /*Carousel*/
 .intro-header {
   background-color: #777777;
@@ -236,8 +255,24 @@ header{
   }
 }
 
+.align {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding-left: 10px;
+}
 
-/*End Home page photo gallery*/
+/*4 of us section  */
+ .us {
+
+
+ }
+
+ .pups {
+
+ }
+
+
 
 /*Contact form*/
 .contact {
@@ -291,7 +326,8 @@ header{
 /*Fund Us  */
 
 .fundus{
-  padding: 50px 80px;
+  padding: 80px;
   align-content: center;
-  border: solid black;
 }
+
+/*Footer  */
