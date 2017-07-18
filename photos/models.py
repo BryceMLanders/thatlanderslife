@@ -7,7 +7,7 @@ from django.db import models
 class Photos(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='images', blank=True, null=True)
     tag = models.CharField(max_length=20, default='')
     published_date = models.DateTimeField(blank=True, null=True)
 

@@ -3,14 +3,11 @@
  
 {% block content %}
 
- <header class="intro-header" style="background-image: url('{% static 'images/ireland_road_web.jpg'%}')">
+ <header class="intro-header" style="background-image: url('{% static 'images/tll_logo.png'%}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>That Landers Life</h1>
-                        {% comment %}<hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>{% endcomment %}
                     </div>
                 </div>
             </div>
@@ -18,12 +15,19 @@
  </header>
 </div>
 </div>
-<div class="col-lg-8">
+<div class="container-fluid">
+<div class="homebio">
+<div class="col-lg-4">
 	<p>Us</p>
 	<p>{% lorem 4 %}</p>
 </div>
+<div class="col-lg-4">
+    <p>{% lorem 3 %}</p>
+</div>
 <div class="col-lg-4 four-of-us">
-	<img class="us" src="{% static 'images/us_and_pups.jpg'%}" alt="">
+    <img class="us" src="{% static 'images/us_and_pups.jpg'%}" alt="">
+</div>
+</div>
 </div>
 
 {% endblock %}

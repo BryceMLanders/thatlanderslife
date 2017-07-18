@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/$', post_detail, name='view_post'),
     url(r'^post/new/$', new_post, name='new_post'),
     url(r'(?P<id>\d+)/edit$', edit_post, name='edit'),
+    url(r'^tag/$', tag_list, name='tag')
 
 ]

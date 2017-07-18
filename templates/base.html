@@ -21,7 +21,7 @@
     <div class="mobile-display" >
         <h2 class="site-title">
             <a href="{% url 'index' %}">
-                <img class="spin" src="{% static 'images/legs.jpg' %}" width="100" alt="logo" alt="smashtheshell">
+                <img class="spin" src="{% static 'images/tll_logo3.jpg' %}" width="100" alt="logo" alt="That Landers Life Logo">
             </a>
         </h2>
     </div>
@@ -29,16 +29,9 @@
         <nav>
             <a href="#" class="toggle-menu">&#9776;</a>
             <ul class="nav-list nav-open" id="nav">
-                <li><a href="{% url 'index' %}"><strong>Home</strong></a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="{% url 'contact' %}">Ask Us</a></li>
-                <li class="has-logo"><a href="{% url 'index' %}">
-                    <h2 class="site-title">
-                        <div class="align">
-                        <img id="img1" class="animated fadeIn" src="{% static 'images/legs.jpg' %}">
-                        </div>
-                    </h2>
-                </a></li>
                 <li><a href="{% url 'bio' %}">The Landers</a></li>
                 <li><a href="{% url 'photos' %}">Photos</a></li>
                 <li><a href="{% url 'wanted_donation' %}">Fund Us</a></li>
@@ -73,9 +66,6 @@
 <div id="masthead">
     <div class="container">
         <div class="row">
-            {% comment %}<h1> stack
-                <p id="logo" class="lead">The Trials of a Bootcamp Developer</p>
-            </h1>{% endcomment %}
         </div>
     </div>
 </div>

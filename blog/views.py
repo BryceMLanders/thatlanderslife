@@ -9,6 +9,12 @@ def post_list(request):
     # posts = Post.objects.all()
     return render(request, "blogposts.html", {'posts': posts})
 
+def tag_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-tag')
+    # posts = Post.objects.all()
+    return render(request, "blogposts.html", {'posts': posts})
+
+
 def post_detail(request, id):
         post  = get_object_or_404(Post, pk=id)
         post.views += 1 # clock up the number of post views
