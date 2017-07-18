@@ -38,7 +38,9 @@ section>p{
 }
 header{
   font-family: 'Josefin Slab', serif !important;
-  padding: 20px 0px;
+  padding-top: 20px;
+  padding-right: 0px;
+  padding-bottom: 5px;
 }
 
 .nav-list{
@@ -47,9 +49,10 @@ header{
   justify-content: space-between;
   align-items: center;
   white-space: nowrap;
-  font-size: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+  font-size: 18px;
+  padding-left: 400px;
+  padding-right: 400px;
+  font-weight: 600;
 }
 .nav-list > li {
   position: relative;
@@ -156,9 +159,9 @@ header{
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 10px;
   margin-top: 10px;
-  height: 750px;
+  height: 900px;
+  padding-left: 35px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -250,8 +253,17 @@ header{
 
 
  .homebio {
-   padding: 20px 50px;
+   padding: 10px 50px;
+   text-align: center;
+   margin-bottom: 50px;
+   font-family: 'Josefin Slab', serif;
+ }
 
+ .hola {
+   font-size: 15pt;
+ }
+
+ .thelanders{
  }
 /*Contact form*/
 .contact {
@@ -310,3 +322,7 @@ header{
 }
 
 /*Footer  */
+
+footer {
+  padding: 50px;
+}
